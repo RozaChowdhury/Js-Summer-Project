@@ -1,0 +1,130 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1663900449653' stop='1663900467361'>
+    <name>Project 1</name>
+    <title>Project 1</title>
+    <test-cases>
+        <test-case start='1663900449674' status='passed' stop='1663900467360'>
+            <name>TC-28 Verify Child-age dropdowns are same as number of Children selected</name>
+            <title>TC-28 Verify Child-age dropdowns are same as number of Children selected</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-105.0.5195.125'/>
+            </parameters>
+            <steps>
+                <step start='1663900449676' status='passed' stop='1663900455810'>
+                    <name>Given I am on hotels landing page</name>
+                    <title>Given I am on hotels landing page</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900455810' status='passed' stop='1663900457953'>
+                    <name>When I click on Travelers</name>
+                    <title>When I click on Travelers</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900457954' status='passed' stop='1663900460262'>
+                    <name>When I select "children" as 2</name>
+                    <title>When I select "children" as 2</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900460262' status='passed' stop='1663900460318'>
+                    <name>When I verify Children-age dropdown are 2</name>
+                    <title>When I verify Children-age dropdown are 2</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900460318' status='passed' stop='1663900460334'>
+                    <name>Then I verify Plus-button is enabled</name>
+                    <title>Then I verify Plus-button is enabled</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900460334' status='passed' stop='1663900460355'>
+                    <name>Then I verify minus-button is enabled</name>
+                    <title>Then I verify minus-button is enabled</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900460355' status='passed' stop='1663900462763'>
+                    <name>When I select "children" as 6</name>
+                    <title>When I select "children" as 6</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900462764' status='passed' stop='1663900462797'>
+                    <name>When I verify Children-age dropdown are 6</name>
+                    <title>When I verify Children-age dropdown are 6</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900462798' status='passed' stop='1663900462813'>
+                    <name>Then I verify Plus-button is disabled</name>
+                    <title>Then I verify Plus-button is disabled</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900462813' status='passed' stop='1663900462830'>
+                    <name>Then I verify minus-button is enabled</name>
+                    <title>Then I verify minus-button is enabled</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900462830' status='passed' stop='1663900464909'>
+                    <name>When I select "children" as 5</name>
+                    <title>When I select "children" as 5</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900464910' status='passed' stop='1663900464941'>
+                    <name>When I verify Children-age dropdown are 5</name>
+                    <title>When I verify Children-age dropdown are 5</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900464941' status='passed' stop='1663900464958'>
+                    <name>Then I verify Plus-button is enabled</name>
+                    <title>Then I verify Plus-button is enabled</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900464958' status='passed' stop='1663900464976'>
+                    <name>Then I verify minus-button is enabled</name>
+                    <title>Then I verify minus-button is enabled</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900464976' status='passed' stop='1663900467298'>
+                    <name>When I select "children" as 0</name>
+                    <title>When I select "children" as 0</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900467298' status='passed' stop='1663900467328'>
+                    <name>Then I verify Children-age dropdown is NOT Displayed</name>
+                    <title>Then I verify Children-age dropdown is NOT Displayed</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900467328' status='passed' stop='1663900467345'>
+                    <name>Then I verify Plus-button is enabled</name>
+                    <title>Then I verify Plus-button is enabled</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start='1663900467345' status='passed' stop='1663900467358'>
+                    <name>Then I verify minus-button is disabled</name>
+                    <title>Then I verify minus-button is disabled</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
