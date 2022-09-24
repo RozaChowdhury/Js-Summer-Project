@@ -4,8 +4,8 @@ exports.config = {
     // Runner Configuration
     // ====================
     //
-    user: rozachowdhury_gF2cil,
-    key: mfXu29SJMQhxqDVqrGGt,
+    user: 'rozachowdhury_gF2cil',
+    key: 'mfXu29SJMQhxqDVqrGGt',
     //
     // ==================
     // Specify Test Files
