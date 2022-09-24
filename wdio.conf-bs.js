@@ -51,33 +51,60 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        maxInstances: 5,
-        browserName: 'chrome',
-        'bstack:options' : {
-            "os" : "Windows",
-            "osVersion" : "8",
-        },
-        acceptInsecureCerts: true
-    },
-    {
-        maxInstances: 5,
-        browserName: 'firefox',
-        'bstack:options' : {
-            "os" : "Windows",
-            "osVersion" : "11",
-        },
-        acceptInsecureCerts: true
-    },
-    {
-        maxInstances: 5,
-        browserName: 'edge',
-        'bstack:options': {
-            os: 'Windows',
-            osVersion: '11'
-        },
-        acceptInsecureCerts: true
-    }
+    capabilities: [
+        {
+            "build": "browserstack-build-1",
+            "name": "parallel_test",
+            "browserstack.debug": true
+          },
+          {"environments": {
+            "env1": {
+              "browserName": "Chrome",
+              "browserVersion": "105.0",
+              "os": "OS X",
+              "osVersion": "Mojave"
+            },
+            "env2": {
+              "browserName": "Firefox",
+              "browserVersion": "102.0",
+              "os": "Windows",
+              "osVersion": "10"
+            },
+            "env3": {
+              "browserName": "Safari",
+              "browserVersion": "14.1",
+              "os": "OS X",
+              "osVersion": "Big Sur"
+            }
+          }
+          }
+        // {
+    //     maxInstances: 5,
+    //     browserName: 'chrome',
+    //     'bstack:options' : {
+    //         "os" : "Windows",
+    //         "osVersion" : "8",
+    //     },
+    //     acceptInsecureCerts: true
+    // },
+    // {
+    //     maxInstances: 5,
+    //     browserName: 'firefox',
+    //     'bstack:options' : {
+    //         "os" : "Windows",
+    //         "osVersion" : "11",
+    //     },
+    //     acceptInsecureCerts: true
+    // },
+    // {
+    //     maxInstances: 5,
+    //     browserName: 'edge',
+    //     'bstack:options': {
+    //         os: 'Windows',
+    //         osVersion: '11'
+    //     },
+    //     acceptInsecureCerts: true
+    // }
     // ,
     // {
     //     maxInstances: 5,
