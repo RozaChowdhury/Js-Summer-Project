@@ -1,5 +1,11 @@
 class Commands{
 
+    async waitUntilWebpageLoads(value){
+        await browser.waitUntil(async () => {
+            const pageTitle = await browser.getTitle();
+            return pageTitle.toLowerCase().includes(value);
+        }, {timeout:5000, timeoutMsg:'Page did not load'});
+    }
     async findWebElement(locator) {
         await $(locator).waitForDisplayed();
         return await $(locator);
