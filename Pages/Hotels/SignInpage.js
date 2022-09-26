@@ -29,12 +29,14 @@ class SignInpage{
         await this.commands.clickWebElement(this.signinBtn);
     }
     async errMsgisDisplayed(){
+        await this.commands.isWebElementDisplayedWithWait(this.errMsg);
         return await this.commands.isWebElementDisplayed(this.errMsg);
     }
     async clickSignUpLink(){
         await this.commands.clickWebElement(this.signUpLink);
     }
     async clickFeedbackLink(){
+        await this.commands.isWebElementDisplayedWithWait(this.feedbackLink);
         await this.commands.clickWebElement(this.feedbackLink);
     }
     async clickSignInDropdown(){

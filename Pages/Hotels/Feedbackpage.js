@@ -19,7 +19,7 @@ class Feedbackpage{
     thankyouMsg = "//h5[contains(text(),'THANK YOU')]"
     
     async verifyThankYouMsgDisplayed(){
-        return await this.commands.isWebElementDisplayed(this.thankyouMsg);
+        return await this.commands.isWebElementDisplayedWithWait(this.thankyouMsg);
         // const allHandles = await this.commands.getAllWindowHandles();
         // for(let handle of allHandles) {
         //     await this.commands.switchToWindowHandle(handle);
@@ -74,10 +74,11 @@ class Feedbackpage{
         }
     }
     async verifyErrMsgDisplayed(){
-        return await this.commands.isWebElementDisplayed(this.errMsg);
+        return await this.commands.isWebElementDisplayedWithWait(this.errMsg);
+        // return await this.commands.isWebElementDisplayed(this.errMsg);
     }
     async dottedBoxDisplayed(){
-        return await this.commands.isWebElementDisplayed(this.dottedBox);
+        return await this.commands.isWebElementDisplayedWithWait(this.dottedBox);
     }
 
 }
