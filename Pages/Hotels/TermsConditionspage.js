@@ -17,6 +17,7 @@ class TermsConditionspage{
         }
     }
     async clickPrivacyStatement(){
+        await this.commands.isWebElementDisplayedWithWait(this.privacyStLinks);
         const links = await this.commands.findWebElements(this.privacyStLinks);
         await this.commands.clickWebElement(links[0]);
     }
