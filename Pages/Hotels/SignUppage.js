@@ -17,6 +17,7 @@ class SignUppage{
     termsAndConditionsLink = "//a[contains(text(),'Terms and')]"
 
     async enterSignUpEmail(value){
+        await this.commands.isWebElementDisplayedWithWait(this.signUpemail);
         await this.commands.clickWebElement(this.signUpemail);
         await this.commands.typeInWebElement(this.signUpemail, value);
     }
