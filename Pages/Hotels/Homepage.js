@@ -72,6 +72,7 @@ class Homepage{
     }
     async setNumOfChildren(num){
         for(let i=0; i<num ; i++){
+            await this.commands.findClickableWebElement(this.addChildrenBtn);
             await this.commands.clickWebElement(this.addChildrenBtn);
             const numOfChildren = await this.commands.getTextFromWebElement(this.numOfChildren);
             if(numOfChildren.localeCompare(num)===0){
@@ -81,6 +82,7 @@ class Homepage{
     }
     async clickMinusButton(num){
         for(let i=0; i<num;i++){
+            await this.commands.findClickableWebElement(this.removeChildrenBtn);
             await this.commands.clickWebElement(this.removeChildrenBtn);
         }
     }
@@ -97,6 +99,7 @@ class Homepage{
         await this.commands.clickWebElement(this.doneBtn);
     }
     async verifyTravelersNumEqualInputof(num){
+        await this.commands.isWebElementDisplayedWithWait(this.numOfTravelers);
         const text = await this.commands.getTextFromWebElement(this.numOfTravelers);
         if (text.includes(num)){
             return true;
@@ -105,6 +108,9 @@ class Homepage{
     async clickSignInBtn(){
         await this.commands.clickWebElement(this.signInBtn);
         await this.commands.clickWebElement(this.signInLink);
+    }
+    async waitForPagetoLoad(value){
+        return await this.commands.waitUntilWebpageLoads(value);
     }
 }
 module.exports = Homepage;
