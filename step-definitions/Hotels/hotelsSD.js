@@ -14,35 +14,29 @@ const fpage = new Feedbackpage();
 // T-18 -->
 Given(/^I am on hotels landing page$/, async function(){
     await browser.url('/');
-    await browser.pause(2000);
+    // await browser.pause(2000);
+    await hpage.waitForPagetoLoad('hotels');
 });
 When(/^I click on Travelers$/, async function(){
     await hpage.clickOnTravelers();
-    await browser.pause(2000);
 });
 Then(/^I select adults as "6"$/, async function(){
     await hpage.setNumOfAdults(6);
-    await browser.pause(2000);
 })
 Then(/^I select children as "3"$/, async function(){
     await hpage.setNumOfChildren(3);
-    await browser.pause(2000);
 })
 Then(/^I select first child age as 4$/, async function(){
     await hpage.selectChildOneAge(4);
-    await browser.pause(2000);
 })
 Then(/^I select second child age under 1$/, async function(){
     await hpage.selectChildTwoAge('Under 1');
-    await browser.pause(2000);
 })
 Then(/^I select third child age 7$/, async function(){
     await hpage.selectChildThreeAge(7);
-    await browser.pause(2000);
 })
 When(/^I click Done$/, async function(){
     await hpage.clickDone();
-    await browser.pause(2000);
 })
 
 Then(/^I verify total number of guests in sum of adults and children same as selected on step 3 and 4$/, async function(){
@@ -63,19 +57,16 @@ Then(/^I enter "(.+)" as (email|password)$/, async function(value, fieldname){
             await spage.enterPassword(value);
             break;            
     }
-    await browser.pause(2000);
 })
 When(/^I click on Sign In button$/, async function(){
     await spage.clickSignInBtn();
-    await browser.pause(5000);
 })
 Then(/^I verify verification message is displayed$/, async function(){
     expect(await spage.errMsgisDisplayed(), 'Error message not displayed').to.be.true;
 })
 // TC-->22
-When(/^I click on SignUp link$/, async function(){
+Then(/^I click on SignUp link$/, async function(){
     await spage.clickSignUpLink();
-    await browser.pause(2000);
 })
 When(/^I enter "(.+)" as invalid (email|firstname|lastname|password)$/, async function(value, fieldname){
     switch(fieldname) {
@@ -114,7 +105,6 @@ Then(/^I verify "Continue" button is displayed but NOT enabled$/, async function
 //TC-20
 When(/^I click on “Terms and Conditions” link$/, async function(){
     await supage.clickTermsAndConditons();
-    await browser.pause(2000);
 })
 Then(/^I verify “Terms and Conditions” page opens in new tab$/, async function(){
     expect( await tcpage.verifyTermsAndConditionsNewTab(), 'Terms and conditions does not open in new page').to.be.true;
@@ -128,19 +118,15 @@ Then(/^I verify “Privacy Statement” page opens in new tab$/, async function(
 // TC-24
 When(/^I click on "Sign in"$/, async function(){
     await spage.clickSignInDropdown();
-    await browser.pause(2000);
 })
 When(/^I click on "Feedback"$/, async function(){
     await spage.clickFeedbackLink();
-    await browser.pause(2000);
 })
 When(/^I click on Submit button$/, async function(){
     await fpage.clickSubmitBtn();
-    await browser.pause(2000);
 })
 Then(/^I verify error message is displayed "Please fill in the required information highlighted below."$/, async function(){
     expect(await fpage.verifyErrMsgDisplayed(), 'Error message not displayed').to.be.true;
-    await browser.pause(2000);
 })
 Then(/^I verify star boxes section is in a red dotted box$/, async function(){
     expect(await fpage.dottedBoxDisplayed(), 'Box not displayed').to.be.true;
@@ -148,19 +134,15 @@ Then(/^I verify star boxes section is in a red dotted box$/, async function(){
 //TC-25
 When(/^I select a star-rating$/, async function(){
     await fpage.selectRating(1);
-    await browser.pause(2000);
 })
 When(/^I enter any comments$/, async function(){
     await fpage.typeInComments('hello world');
-    await browser.pause(2000);
 })
 When(/^I select any option for “How likely are you to return to Hotels.com”$/, async function(){
     await fpage.selectValueforLikelyToReturn('Unsure');
-    await browser.pause(2000);
 })
 When(/^I select any answer for “Prior to this visit, have you ever booked on Hotels.com”$/, async function(){
     await fpage.bookedHereBeforeYesOrNo('yEs');
-    await browser.pause(2000);
 })
 When(/^I select any answer for ”Did you accomplish what you wanted to do on this page”$/, async function(){
     await fpage.didYouAccomplishYesOrNo('nO');
@@ -181,16 +163,14 @@ When(/^I select "children" as (2|6|5|0)$/, async function(fieldname){
             break;
         case '5':
             await hpage.clickMinusButton(1);
-            await browser.pause(2000);
             break;
         case '0':
             await hpage.clickMinusButton(5);
-            await browser.pause(2000);
             break;
         
     }   
 })
-When(/^I verify Children-age dropdown are (2|6|5)$/, async function(fieldname){
+Then(/^I verify Children-age dropdown are (2|6|5)$/, async function(fieldname){
     switch(fieldname) {
         case '2':
             expect(await hpage.verify2Dropdown(), 'Does not display 2 dropdown').to.be.true;
