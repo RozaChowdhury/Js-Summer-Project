@@ -71,7 +71,6 @@ class Commands{
         const element = await this.findWebElement(locator);
         return await element.getText();
     }
-
     async getAllWindowHandles() {
         await browser.waitUntil(async () => {
             const allHandles = await browser.getWindowHandles();
@@ -106,6 +105,34 @@ class Commands{
     }
     async maximizeScreen(){
         await browser.maximizeWindow();
+    }
+    async selectFromAutoSuggestions(locatorForAutoSuggestionElements, valueToSelect) {
+        const autoSuggestionElements = await this.findWebElements(locatorForAutoSuggestionElements);
+
+        for (const autoSuggestionElement of autoSuggestionElements) {
+            const suggestionText = await autoSuggestionElement.getText();
+            if (suggestionText.toLowerCase().localeCompare(valueToSelect.toLowerCase()) === 0) {
+                await autoSuggestionElement.click();
+                break;
+            }
+        }
+    }
+    async selectDateFromCalendar(monthHeadingLocator, goToNextMonthLocator, allDatesLocator, dateToSelect) {
+        for (let i=1 ; i <= 12 ; i++) {
+            const monthSeen = await this.isWebElementDisplayed(monthHeadingLocator);
+            if (monthSeen) {
+                break;
+            }
+            await this.clickWebElement(goToNextMonthLocator);
+        }
+        const allDateElements = await this.findWebElements(allDatesLocator);
+        for (const dateElement of allDateElements) {
+            const date = await dateElement.getAttribute('data-day');
+            if (date.localeCompare(dateToSelect) === 0) {
+                await dateElement.click();
+                break;
+            }
+        }
     }
 
 
